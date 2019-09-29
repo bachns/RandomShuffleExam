@@ -44,6 +44,7 @@ void MainWindow::createConnections()
 	connect(browseBtn, &QPushButton::clicked, [=] { loadExam(); });
 	connect(shuffleBtn, &QPushButton::clicked, [=] { shuffle(); });
 	connect(applyBtn, &QPushButton::clicked, [=] { apply(); });
+	connect(cancelBtn, &QPushButton::clicked, [=] { m_timer->stop(); close(); });
 	connect(selectDirBtn, &QPushButton::clicked, [=] { selectDir(); });
 	connect(m_timer, &QTimer::timeout, this, &MainWindow::process);
 }
