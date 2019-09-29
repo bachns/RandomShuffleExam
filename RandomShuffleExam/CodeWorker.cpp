@@ -36,7 +36,7 @@ void CodeWorker::process()
 	auto cmd = "bin\\7z.exe x " + input + " -o" + output;
 	QProcess process(this);
 	process.start(cmd);
-	if(!process.waitForFinished(300000))
+	if(!process.waitForFinished(600000))
 	{
 		emit error(Vietnamese::str(L"E: Quá thời gian"));
 		return;
@@ -50,7 +50,7 @@ void CodeWorker::process()
 	const auto fileName = QString(R"("%1\%2\*")").arg(m_saveDir).arg(m_code);
 	cmd = "bin\\7z.exe a -tzip " + zipName + " " + fileName;
 	process.start(cmd);
-	if (!process.waitForFinished(300000))
+	if (!process.waitForFinished(600000))
 	{
 		emit error(Vietnamese::str(L"E: Quá thời gian"));
 		return;
