@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>Đánh phách tự động</string>
   </property>
   <property name="windowIcon">
    <iconset resource="MainWindow.qrc">
@@ -77,6 +77,12 @@
         <property name="text">
          <string>Đồng ý</string>
         </property>
+        <property name="autoDefault">
+         <bool>true</bool>
+        </property>
+        <property name="default">
+         <bool>true</bool>
+        </property>
        </widget>
       </item>
       <item>
@@ -93,6 +99,15 @@
   <widget class="QStatusBar" name="statusBar"/>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
+ <tabstops>
+  <tabstop>browseBtn</tabstop>
+  <tabstop>selectDirBtn</tabstop>
+  <tabstop>dirLedr</tabstop>
+  <tabstop>shuffleBtn</tabstop>
+  <tabstop>applyBtn</tabstop>
+  <tabstop>cancelBtn</tabstop>
+  <tabstop>tableWidget</tabstop>
+ </tabstops>
  <resources>
   <include location="MainWindow.qrc"/>
  </resources>
