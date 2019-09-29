@@ -68,6 +68,7 @@ void MainWindow::process()
 			connect(worker, &CodeWorker::finished, [=] {
 				tableWidget->removeCellWidget(m_currentIndex, 2);
 				const auto item = new QTableWidgetItem("Xong");
+				item->setTextAlignment(Qt::AlignCenter);
 				tableWidget->setItem(m_currentIndex, 2, item);
 				m_codeWorderFinished = true;
 				m_currentIndex++;
@@ -76,6 +77,7 @@ void MainWindow::process()
 			{
 				tableWidget->removeCellWidget(m_currentIndex, 2);
 				const auto item = new QTableWidgetItem(message);
+				item->setTextAlignment(Qt::AlignCenter);
 				tableWidget->setItem(m_currentIndex, 2, item);
 				m_codeWorderFinished = true;
 				m_currentIndex++;
