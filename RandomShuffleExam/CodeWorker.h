@@ -31,6 +31,7 @@ public slots:
 	void process();
 
 signals:
+	void error(QString message);
 	void finished();
 
 private:

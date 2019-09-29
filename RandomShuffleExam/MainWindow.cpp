@@ -72,6 +72,14 @@ void MainWindow::process()
 				m_codeWorderFinished = true;
 				m_currentIndex++;
 			});
+			connect(worker, &CodeWorker::error, [=](const QString& message)
+			{
+				tableWidget->removeCellWidget(m_currentIndex, 2);
+				const auto item = new QTableWidgetItem(message);
+				tableWidget->setItem(m_currentIndex, 2, item);
+				m_codeWorderFinished = true;
+				m_currentIndex++;
+			});
 			connect(worker, SIGNAL(finished()), thread, SLOT(quit()));
 			connect(worker, SIGNAL(finished()), worker, SLOT(deleteLater()));
 			connect(thread, SIGNAL(finished()), thread, SLOT(deleteLater()));
